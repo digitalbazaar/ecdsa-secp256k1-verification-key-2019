@@ -38,7 +38,9 @@ module.exports = async function({Secp256k1KeyPair}) {
       });
 
       it('has static method fingerprintFromPublicKey', async () => {
-        const f0 = Secp256k1KeyPair.fingerprintFromPublicKey({publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'});
+        const f0 = Secp256k1KeyPair.fingerprintFromPublicKey({
+          publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
+        });
         expect(f0).to.equal('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4')
       });
 
