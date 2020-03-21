@@ -68,7 +68,13 @@ module.exports = async function({Secp256k1KeyPair}) {
         expect(v0.valid).to.equal(true)
       });
     })
-    
+
+    it('has static method fromFingerprint', async () => {
+      const x = await Secp256k1KeyPair.fromFingerprint({fingerprint:'zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4'});
+      const v0 = x.verifyFingerprint('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
+      expect(v0.valid).to.equal(true)
+    });
+
     it('properly signs and verifies', async () => {
       const x = await Secp256k1KeyPair.generate();
       const {sign} = x.signer();
