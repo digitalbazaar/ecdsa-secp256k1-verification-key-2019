@@ -64,6 +64,7 @@ describe('secp256k1-key-pair', () => {
         publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
       });
       const v0 = x.verifyFingerprint('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
+      expect(v0.error).to.be.undefined;
       expect(v0.valid).to.equal(true);
     });
   });
