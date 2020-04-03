@@ -72,7 +72,7 @@ describe('secp256k1-key-pair', () => {
     const x = await Secp256k1KeyPair.generate();
     const {sign} = x.signer();
     sign.should.be.a('function');
-    const testBuffer = Buffer.from('test 1');
+    const testBuffer = Uint8Array.from('test 1');
     const signature = await sign({data: testBuffer});
     (signature instanceof Uint8Array).should.be.true;
     const {verify} = x.verifier();
