@@ -5,8 +5,9 @@
 
 const Secp256k1KeyPair = require('..');
 const chai = require('chai');
-const should = chai.should();
 const {expect} = chai;
+
+chai.should();
 
 describe('secp256k1-key-pair', () => {
   describe('Secp256k1KeyPair', () => {
@@ -19,8 +20,10 @@ describe('secp256k1-key-pair', () => {
         publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
       });
       x.should.be.a('object');
-      expect(x.privateKeyBase58).to.equal('4HvXrvNBrmN5tUCwcjVWRpQG32CtuLvZ12xVf5rv8r1F');
-      expect(x.publicKeyBase58).to.equal('231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL');
+      expect(x.privateKeyBase58).to.equal(
+        '4HvXrvNBrmN5tUCwcjVWRpQG32CtuLvZ12xVf5rv8r1F');
+      expect(x.publicKeyBase58).to.equal(
+        '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL');
     });
 
     it('has static factory method from', async () => {
@@ -32,15 +35,17 @@ describe('secp256k1-key-pair', () => {
         publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
       });
       x.should.be.a('object');
-      expect(x.privateKeyBase58).to.equal('4HvXrvNBrmN5tUCwcjVWRpQG32CtuLvZ12xVf5rv8r1F');
-      expect(x.publicKeyBase58).to.equal('231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL');
+      expect(x.privateKeyBase58).to.equal(
+        '4HvXrvNBrmN5tUCwcjVWRpQG32CtuLvZ12xVf5rv8r1F');
+      expect(x.publicKeyBase58).to.equal(
+        '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL');
     });
 
     it('has static method fingerprintFromPublicKey', async () => {
       const f0 = Secp256k1KeyPair.fingerprintFromPublicKey({
         publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
       });
-      expect(f0).to.equal('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4')
+      expect(f0).to.equal('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
     });
 
     it('has instance method fingerprintFromPublicKey', async () => {
@@ -52,7 +57,7 @@ describe('secp256k1-key-pair', () => {
         publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
       });
       const f0 = x.fingerprint();
-      expect(f0).to.equal('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4')
+      expect(f0).to.equal('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
     });
 
     it('has instance method verifyFingerprint', async () => {
@@ -63,10 +68,21 @@ describe('secp256k1-key-pair', () => {
         privateKeyBase58: '4HvXrvNBrmN5tUCwcjVWRpQG32CtuLvZ12xVf5rv8r1F',
         publicKeyBase58: '231cRx1fhyNzrdj9i3UseKm1ApgMwyDLbKtJJH5AacEwL'
       });
-      const v0 = x.verifyFingerprint('zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
+      const v0 = x.verifyFingerprint(
+        'zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
       expect(v0.error).to.be.undefined;
       expect(v0.valid).to.equal(true);
     });
+  });
+
+  it('has static method fromFingerprint', async () => {
+    const x = await Secp256k1KeyPair
+      .fromFingerprint({
+        fingerprint:'zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4'
+      });
+    const v0 = x.verifyFingerprint(
+      'zQ3shnxmSoA9BJ2Djspq8RZkh9MNcUSYvFmP8Fp46aQqhpio4');
+    expect(v0.valid).to.equal(true)
   });
 
   it('properly signs and verifies', async () => {

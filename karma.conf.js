@@ -58,7 +58,6 @@ module.exports = function(config) {
             include: [{
               // exclude node_modules by default
               exclude: /node_modules/,
-              exclude: /dist/,
               include: /(node_modules\/jsonld-signatures)/,
             }
             ],
