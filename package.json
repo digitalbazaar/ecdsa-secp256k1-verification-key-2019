@@ -64,7 +64,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^3.0.5",
     "mocha": "^6.1.4",
-    "semver": "^6.0.0",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
     "webpack-merge": "^4.2.1"
