@@ -31,8 +31,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'tests/test-karma.js',
       {
-        pattern: 'tests/test-karma.js',
+        pattern: 'tests/test.js',
         watched: false, served: true, included: true
       }
     ],
@@ -57,7 +58,6 @@ module.exports = function(config) {
             include: [{
               // exclude node_modules by default
               exclude: /node_modules/,
-              exclude: /dist/,
               include: /(node_modules\/jsonld-signatures)/,
             }
             ],
