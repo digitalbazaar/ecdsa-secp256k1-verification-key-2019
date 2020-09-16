@@ -33,7 +33,7 @@
   "homepage": "https://github.com/digitalbazaar/secp256k1-key-pair#readme",
   "dependencies": {
     "elliptic": "^6.5.0",
-    "node-forge": "^0.8.5"
+    "node-forge": "^0.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
