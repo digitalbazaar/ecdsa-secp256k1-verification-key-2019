@@ -32,8 +32,8 @@
   },
   "homepage": "https://github.com/digitalbazaar/secp256k1-key-pair#readme",
   "dependencies": {
-    "elliptic": "^6.5.0",
-    "node-forge": "^0.8.5"
+    "elliptic": "6.5.3",
+    "node-forge": "0.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -46,11 +46,11 @@
     "babel-loader": "^8.0.6",
     "browserify": "^16.2.3",
     "chai": "^4.2.0",
-    "core-js": "^2.6.4",
+    "core-js": "3.7.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-digitalbazaar": "^2.0.0",
-    "jsonld-signatures": "^4.2.1",
+    "jsonld-signatures": "5.0.0",
     "karma": "^4.1.0",
     "karma-babel-preprocessor": "^8.0.0",
     "karma-browserify": "^6.0.0",
