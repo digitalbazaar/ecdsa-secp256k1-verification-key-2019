@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/digitalbazaar/secp256k1-key-pair#readme",
   "dependencies": {
+    "bitcoin-ts": "^1.15.2",
     "elliptic": "^6.5.0",
     "node-forge": "^0.8.5"
   },
